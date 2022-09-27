@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.util.spi.AbstractResourceBundleProvider;
 
-public class Main {
+public class Platnosc {
 
     public static void main(String[] args) {
         System.out.println("Witaj");
@@ -43,17 +43,34 @@ public class Main {
                 } else if (suma == kwota) {
                     System.out.println("Równa kwota, koniec transakcji.");
                 } else {
-                    while (suma < kwota) {
-                        System.out.println("Dołóż banknotów");
-                        System.out.println("Podaj dodatkowe banknoty: ");
-                        String banknoty2 = scn.nextLine();
-                        String []tablica2 = banknoty2.split(";");
-                        for(i=0; i < tablica2.length; i++ ){
-                            suma = suma + Integer.parseInt(tablica2[i]);
+                    System.out.println("Czy chcesz kontynuowac, 1 - aby dolozyc banknoty, 2 - aby zaplacic karta/blik, 3 - aby przerwac");
+                    String wybor = scn.nextLine();
+                    while (true){
+                        if(wybor.equals("1") || wybor.equals("2") || wybor.equals("3")){
+                            if(wybor.equals("1")){
+                                while (suma < kwota) {
+                                    System.out.println("Dołóż banknotów");
+                                    System.out.println("Podaj dodatkowe banknoty: ");
+                                    String banknoty2 = scn.nextLine();
+                                    String []tablica2 = banknoty2.split(";");
+                                    for(i=0; i < tablica2.length; i++ ){
+                                        suma = suma + Integer.parseInt(tablica2[i]);
+                                    }
+                                }
+                                System.out.println("Reszta: " + (suma - kwota));
+                                System.out.println("Koniec transakcji.");
+                            }else if(wybor.equals("2")){
+                                System.out.println("karta/blik");
+                                System.out.println("Koniec transakcji.");
+                            }else{
+                                System.out.println("Koniec transakcji.");
+                            }
+                            break;
+                        }else {
+                            System.out.println("Czy chcesz kontynuowac, 1 - aby dolozyc banknoty, 2 - aby zaplacic karta/blik, 3 - aby przerwac");
+                            rodzaj = scn.nextLine();
                         }
                     }
-                    System.out.println("Reszta: " + (suma - kwota));
-                    System.out.println("Koniec transakcji.");
                 }
                 break;
             case "2":
