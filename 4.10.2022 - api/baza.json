@@ -1,0 +1,28 @@
+{
+	"user": {
+		{
+			"id" : "1"
+			"name" : "Jan1"
+			"surname" : "Kowalski1"
+			"email" : "k@gmail.com"
+			"password" : "1111"
+			"role" : "1"
+		}
+		{
+			"id" : "2"
+			"name" : "Jan2"
+			"surname" : "Kowalski2"
+			"email" : "k2@gmail.com"
+			"password" : "2"
+			"role" : "1"
+		}
+				{
+			"id" : "3"
+			"name" : "Jan3"
+			"surname" : "Kowalski3"
+			"email" : "k3@gmail.com"
+			"password" : "1111"
+			"role" : "1"
+		}
+	}
+}
